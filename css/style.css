@@ -1,0 +1,201 @@
+/* css/style.css */
+
+/* 기본 설정 및 배경 */
+body {
+    background-color: #2c2a25; /* 빈티지 라디오 본체 색상 */
+    color: #d1cda8;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 라디오 본체 케이스 */
+.radio-case {
+    background: linear-gradient(145deg, #3d3a33, #25231f);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px #1a1916, -10px -10px 30px #3e3b34;
+    width: 600px;
+    border: 2px solid #111;
+}
+
+h1 {
+    text-align: center;
+    color: #e09f3e; /* 레트로 오렌지 포인트 */
+    letter-spacing: 2px;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* 상단 설정 패널 (슬라이더 및 선택창) */
+.settings-panel {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1815;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px inset #333;
+}
+
+.setting-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a39c82;
+}
+
+.setting-item label {
+    margin-bottom: 5px;
+}
+
+/* 빈티지 슬라이더 디자인 */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 120px;
+    background: #000;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 20px;
+    background: #e09f3e;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid #000;
+}
+
+/* 빈티지 드롭다운 디자인 */
+select {
+    background-color: #000;
+    color: #e09f3e;
+    border: 1px solid #333;
+    padding: 3px;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* 📺 CRT 모니터 화면 스타일 */
+.crt-screen {
+    background-color: #051a05;
+    border: 10px solid #111;
+    border-radius: 20px;
+    padding: 20px;
+    height: 150px;
+    font-family: 'VT323', monospace; /* 레트로 픽셀 폰트 */
+    color: #39ff14; /* 네온 그린 */
+    text-shadow: 0 0 8px #39ff14;
+    box-shadow: inset 0 0 20px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+/* CRT 브라운관 주사선 효과 (가로줄 무늬) */
+.crt-screen::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+}
+
+.display-row {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.status-indicator {
+    color: #ff3333; /* 붉은색 ON AIR 표시 */
+    text-shadow: 0 0 8px #ff3333;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.input-display {
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 5px;
+    z-index: 3;
+}
+
+/* 하단 컨트롤 패널 */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1f1d1a;
+    border-radius: 8px;
+    border: 1px solid #000;
+}
+
+.primary-btn {
+    background-color: #e09f3e;
+    color: #111;
+    border: 2px solid #000;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #000;
+    transition: all 0.1s;
+}
+
+.primary-btn:active {
+    box-shadow: 0px 0px 0px #000;
+    transform: translateY(2px);
+}
+
+.key-mode-toggle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #a39c82;
+}
+
+.key-mode-toggle label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 하단 설명서 */
+.instructions {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #a39c82;
+    line-height: 1.6;
+}
+
+kbd {
+    background-color: #111;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #e09f3e;
+    border: 1px solid #333;
+    box-shadow: 1px 1px 0 #000;
+}
