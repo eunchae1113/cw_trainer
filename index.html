@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Trainer - Retro Edition</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="radio-case">
+        <h1>CW TRAINER</h1>
+
+        <div class="settings-panel">
+            <div class="setting-item">
+                <label for="wpm-slider">WPM: <span id="wpm-display">20</span></label>
+                <input type="range" id="wpm-slider" min="10" max="40" value="20">
+            </div>
+            <div class="setting-item">
+                <label for="tone-slider">TONE: <span id="tone-display">700</span>Hz</label>
+                <input type="range" id="tone-slider" min="400" max="1000" step="50" value="700">
+            </div>
+            <div class="setting-item">
+                <label for="lang-select">LANG:</label>
+                <select id="lang-select">
+                    <option value="english">EN (A-Z)</option>
+                    <option value="korean">KR (가-힣)</option>
+                    <option value="qcodes">Q-Codes</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="crt-screen">
+            <div class="display-row">
+                <span id="mode-display">MODE: FREE PLAY</span>
+                <span class="status-indicator">ON AIR</span>
+            </div>
+            <div class="input-display" id="morse-output">_</div>
+            <div class="display-row">
+                <span>TEXT:</span>
+                <span id="text-output"></span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="primary-btn">AUDIO START</button>
+            <div class="key-mode-toggle">
+                <span>KEY:</span>
+                <label><input type="radio" name="key-mode" value="straight" checked> STR</label>
+                <label><input type="radio" name="key-mode" value="paddle"> PAD</label>
+            </div>
+        </div>
+
+        <div class="instructions">
+            ※ 브라우저 정책상 먼저 <b>[AUDIO START]</b> 버튼을 클릭해야 소리가 납니다.<br>
+            <kbd>Space</kbd> : 스트레이트 키 (길게/짧게 누르기)<br>
+            <kbd>Q</kbd> : 패들 단점(•) &nbsp; <kbd>W</kbd> : 패들 장점(—)
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
