@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CW Trainer - Retro Edition</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -38,7 +36,14 @@
                 <span id="mode-display">MODE: FREE PLAY</span>
                 <span class="status-indicator">ON AIR</span>
             </div>
+            
+            <div class="display-row" id="study-container" style="display: none; color: #e09f3e;">
+                <span>TARGET: <span id="study-target">-</span></span>
+                <span id="study-result"></span>
+            </div>
+
             <div class="input-display" id="morse-output">_</div>
+            
             <div class="display-row">
                 <span>TEXT:</span>
                 <span id="text-output"></span>
@@ -47,6 +52,13 @@
 
         <div class="controls">
             <button id="start-btn" class="primary-btn">AUDIO START</button>
+            
+            <div class="key-mode-toggle">
+                <span>APP:</span>
+                <label><input type="radio" name="app-mode" value="free" checked> FREE</label>
+                <label><input type="radio" name="app-mode" value="study"> STUDY</label>
+            </div>
+
             <div class="key-mode-toggle">
                 <span>KEY:</span>
                 <label><input type="radio" name="key-mode" value="straight" checked> STR</label>
@@ -55,9 +67,8 @@
         </div>
 
         <div class="instructions">
-            ※ 브라우저 정책상 먼저 <b>[AUDIO START]</b> 버튼을 클릭해야 소리가 납니다.<br>
-            <kbd>Space</kbd> : 스트레이트 키 (길게/짧게 누르기)<br>
-            <kbd>Q</kbd> : 패들 단점(•) &nbsp; <kbd>W</kbd> : 패들 장점(—)
+            ※ <b>[AUDIO START]</b>를 눌러야 소리가 납니다.<br>
+            <kbd>Space</kbd> : 스트레이트 키 &nbsp; <kbd>Q</kbd> <kbd>W</kbd> : 패들 키
         </div>
     </div>
 
